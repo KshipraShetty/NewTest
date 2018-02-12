@@ -5,7 +5,7 @@ module.exports = [
     path: '/books/{bookID}/like',
     method: 'POST',
     handler: (request, response) => {
-      const id = request.params.bookID;
+      const id = Number(request.params.bookID);
 
       models.books.findOne({
         where: {
