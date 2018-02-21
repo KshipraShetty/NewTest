@@ -14,7 +14,7 @@ describe('Check for GET/books/booksrating/populate', () => {
   test('Check for statusCode:', (done) => {
     server.inject('/books/booksRating/populate', (response) => {
       expect(response.statusCode).toBe(200);
-      done();
     });
+    done();
   });
 });

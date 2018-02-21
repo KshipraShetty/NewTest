@@ -84,16 +84,16 @@ describe('Check for the books ratings', () => {
     test('/books/booksRating', (done) => {
       server.inject('/books/booksRating', (response) => {
         expect(response.statusCode).toBe(200);
-        done();
       });
+      done();
     });
   });
   describe('Check for contents:', () => {
     test('/books/booksRating', (done) => {
       server.inject('/books/booksRating', (response) => {
         expect(JSON.parse(response.payload).data).toEqual(output);
-        done();
       });
+      done();
     });
   });
 });
