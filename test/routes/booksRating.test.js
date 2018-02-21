@@ -4,43 +4,43 @@ const output = {
   'J K Rowling': [
     {
       author: 'J K Rowling',
-      id: 1,
+      bookID: 1,
       name: 'Harry Potter and the Sorcerers Stone (Harry Potter, #1)',
       rating: 4.45,
     },
     {
       author: 'J K Rowling',
-      id: 2,
+      bookID: 2,
       name: 'Harry Potter and the Chamber of Secrets (Harry Potter, #2)',
       rating: 4.38,
     },
     {
       author: 'J K Rowling',
-      id: 3,
+      bookID: 3,
       name: 'Harry Potter and the Prisoner of Azkaban (Harry Potter, #3)',
       rating: 4.54,
     },
     {
       author: 'J K Rowling',
-      id: 4,
+      bookID: 4,
       name: 'Harry Potter and the Goblet of Fire (Harry Potter, #4)',
       rating: 4.53,
     },
     {
       author: 'J K Rowling',
-      id: 5,
+      bookID: 5,
       name: 'Harry Potter and the Order of the Phoenix (Harry Potter, #5)',
       rating: 4.47,
     },
     {
       author: 'J K Rowling',
-      id: 6,
+      bookID: 6,
       name: 'Harry Potter and the Half-Blood Prince (Harry Potter, #6)',
       rating: 4.54,
     },
     {
       author: 'J K Rowling',
-      id: 7,
+      bookID: 7,
       name: 'Harry Potter and the Deathly Hallows (Harry Potter, #7)',
       rating: 4.62,
     },
@@ -48,31 +48,31 @@ const output = {
   'Sidney Sheldon': [
     {
       author: 'Sidney Sheldon',
-      id: 8,
+      bookID: 8,
       name: 'If Tomorrow Comes (Tracy Whitney Series, #1)',
       rating: 4.02,
     },
     {
       author: 'Sidney Sheldon',
-      id: 10,
-      name: 'Tell Me Your Dreams',
-      rating: 3.93,
-    },
-    {
-      author: 'Sidney Sheldon',
-      id: 9,
+      bookID: 9,
       name: 'Master of the Game',
       rating: 4.1,
     },
     {
       author: 'Sidney Sheldon',
-      id: 11,
+      bookID: 10,
+      name: 'Tell Me Your Dreams',
+      rating: 3.93,
+    },
+    {
+      author: 'Sidney Sheldon',
+      bookID: 11,
       name: 'The Other Side of Midnight (Midnight #1)',
       rating: 3.9,
     },
     {
       author: 'Sidney Sheldon',
-      id: 12,
+      bookID: 12,
       name: 'Rage of Angels',
       rating: 3.92,
     },
@@ -91,7 +91,7 @@ describe('Check for the books ratings', () => {
   describe('Check for contents:', () => {
     test('/books/booksRating', (done) => {
       server.inject('/books/booksRating', (response) => {
-        expect(JSON.parse(response.payload)).toEqual(output);
+        expect(JSON.parse(response.payload).data).toEqual(output);
         done();
       });
     });

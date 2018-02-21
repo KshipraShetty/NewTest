@@ -2,18 +2,18 @@ const server = require('../../src/server.js');
 const models = require('../../models');
 
 beforeEach(() => models.books.create({
-  bookID: 10,
-  name: 'Tell Me Your Dreams',
-  author: 'Sidney Sheldon',
-  rating: 3.93,
+  bookID: 1,
+  name: 'Harry Potter and the Sorcerers Stone (Harry Potter, #1)',
+  author: 'J K Rowling',
+  rating: 4.45,
 }));
 afterEach(() => models.books.destroy({ truncate: true }));
 afterAll(() => models.close());
 describe('Check for POST/books/{bookID}/like', () => {
-  test('Should like book with bookid 10', (done) => {
+  test('Should like book with bookid 1', (done) => {
     const option = {
       method: 'POST',
-      url: '/books/10/like',
+      url: '/books/1/like',
 
     };
     server.inject(option, (response) => {
