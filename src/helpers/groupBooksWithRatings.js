@@ -10,10 +10,6 @@ const groupBooksWithRatings = (booksWithRatings) => {
     return groupHolder;
   }, {});
 
-  // Object.keys(groupedBooks).forEach((key) => {
-  //   const booksInThisGroup = groupedBooks[key];
-  //   groupedBooks[key] = booksInThisGroup.sort((a, b) => a.bookID >= b.bookID);
-  // });
   return groupedBooks;
 };
 module.exports = groupBooksWithRatings;
